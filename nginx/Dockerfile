@@ -1,4 +1,4 @@
-FROM nginx:1.16.1
+FROM nginx:1.21
 RUN rm /etc/nginx/conf.d/default.conf
 RUN rm /etc/nginx/nginx.conf
 COPY etc/nginx.conf.tmp /etc/nginx/

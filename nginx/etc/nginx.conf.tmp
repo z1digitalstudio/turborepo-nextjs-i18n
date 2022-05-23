@@ -72,14 +72,14 @@ http {
 		}
 	}
 	server {
-		listen 8080;
-		location @other {
+		listen 8080 default;
+		location / {
 			# reverse proxy for next server
 			real_ip_header X-Forwarded-For;
 			set_real_ip_from 172.16.0.0/16;
-			set $endpoint_2 ${SERVER_NAME}:3001;
+			set $endpoin ${SERVER_NAME}:3001;
 			resolver 172.16.0.2 valid=60s;
-			proxy_pass http://$endpoint_2;
+			proxy_pass http://$endpoin;
 			proxy_http_version 1.1;
 			proxy_set_header Upgrade $http_upgrade;
 			proxy_set_header Connection 'upgrade';
