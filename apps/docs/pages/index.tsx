@@ -13,7 +13,7 @@ export default function Page() {
     <div>
       <h1>{t("title")}</h1>
       <p>{lang}</p>
-      <a href={`http://localhost:3000/${lang}`}>Back to home</a>
+      <a href={`http://blueg-applo-vaw8ftnn4ky5-1293366729.us-east-1.elb.amazonaws.com/${lang}`}>Back to home</a>
       <br></br>
       <br></br>
       <button onClick={() => handleLang("en")}>en</button>
